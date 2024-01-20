@@ -1,0 +1,316 @@
+@font-face {
+    font-family: "Gilroy";
+    src: url(./Gilroy-Medium.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gilroy";
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: #EFF0F0;
+}
+
+#nav{
+    width: 100%;
+    /* height: 60px; */
+    height: 6vw;
+    display: flex;
+    align-items: center;
+    /* background-color: red; */
+    justify-content: space-between;
+    padding: 0 2.5vw;
+}
+
+#nav-part1{
+    
+    display: flex;
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+}
+
+.gola{
+    /* height: 25px; */
+    height: 1.3vw;
+    /* width: 25px; */
+    width: 1.3vw;
+    background-color: black;
+    border-radius: 50%;
+}
+
+#nav-part2{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 40px; */
+    gap: 2.6vw;
+}
+
+#nav-part2 h4{
+    /* font-size: 15px; */
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+#nav-part2 h4 span{
+    margin-left: 1vw;
+    color: #A9AAAA;
+}
+
+#nav-part2 i{
+    display: none;
+}
+
+#nav2{
+    width: 100%;
+    /* height: 50px; */
+    /* height: 3vw; */
+    height: fit-content;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    /* gap: 70px; */
+    gap: 4vw;
+    padding: 0 2.4vw;
+}
+
+#nav2 h3{
+    /* font-size: 16px; */
+    font-size: 1vw;
+    font-weight: 550;
+}
+
+#content{
+    /* HUMNE NAV KO DI 80PX HEIGHT AND NAV2 KO DI 60PX HEIGHT */
+    /* TOTAL HEIGHT ==> 140PX [ITNI HEIGHT DE CHUKE 100% MEIN SE] */
+    /* AB HUMO CONTENT KO BACI HUI HEIGHT DENI HAI  */
+    /* BACHI HUI HEIGHT ==> 100% - 140px */
+    /* LEKIN CALCULATE KASIE KRE KITNI BACCHI HUI HAI ==> EK METHOD TOH HIT & TRIAL */
+    /* AGAR BACHI HUI SE JYADA DENGE TOH WO SCROLLER SA AAJATA HAI */
+    /* BEST METHOD ==> calc()  ==>% mein se pixels bhi minus krr skte hai */
+    /* OPERATOR KE DONO SIDE SPACE DENA JARURI HAI */
+    height: calc(100% - 7.2vw);
+    width: 100%;
+    /* background-color: aquamarine; */
+}
+
+#text-content{
+    height: 45%;
+    width: 100%;
+    /* background-color: maroon; */
+    /* 
+        DISPLAY FLEX => ELEMETNS KO DABA DETA HAI[SHRINK KRR DETA HAI] FIT KRNE KE LIYE CONTAINER MEIN
+        TOH ELEMENTS APNI REAL SIZE M NHI REHTE HAI
+    */
+    display: flex;
+    /* HUM PARENT KO KEHH RHE HAI WRAP MTT KAR DIVs KO  */
+    /* WAISE YEH DENE JARURAT NHI HAI */
+    flex-wrap: nowrap;
+
+    /* AB SCROLLER NICCHE PURE PAGE PE AA RHA HAI PAR HUM CHAHTE HAI WO ISS WALE DIV [text-content] PE AAYE */
+    /* TOH HUM PROPERTY DENGE ==> overflow-x: auto */
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-top: 5vw;
+}
+
+.elem{
+    /* CHILD KO KENEGE flex-shrink: 0 ==> KI SHRINK MTT KRR APNE AAP KO */
+    /* CHILD APNE AAP KO SHRINK MTT KRR FLEX CONTAINER MEIN */
+    flex-shrink: 0;
+    height: 100%;
+    width: 50%;
+    /* background-color: red; */
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.elem h5{
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    /* font-size: 20px; */
+    font-size: 1.5vw;
+}
+
+.elem h1{
+    position: absolute;
+    left: 27%;
+    /* font-size: 100px; */
+    font-size: 5vw;
+    font-weight: 100;
+}
+
+/* SCROLL BAR KO DESGIN KRNE KE LIYE */
+#text-content::-webkit-scrollbar{
+    background-color: transparent;
+    height: 0.7vw;
+}
+
+/* scrollbar-thumb ===> JO SCROLLER MEIN WO BAR HOTA HAI NA JISSE PAKAD KE SCROLL KRTE HAI WO H YEH */
+#text-content::-webkit-scrollbar-thumb{
+    background-color: orangered;
+}
+
+
+#image-content{
+    width: 100%;
+    height: 55%;
+    background-color: purple;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+#image-content::-webkit-scrollbar{
+    display: none;
+}
+
+#image-content img{
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* PEHLI VALUE => x-axis */
+    /* DUSRI VALUE => y-axis */
+    object-position: 0 32%;
+}
+
+#image-content #img2{
+    object-position: 0 55%;
+}
+
+#image-content #img3{
+    object-position: 0 18%;
+}
+
+
+@media (max-width: 600px) {
+    #nav{
+        width: 100%;
+        /* height: 60px; */
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        /* background-color: red; */
+        justify-content: space-between;
+        padding: 0 2.5vw;
+    }
+    
+    #nav-part1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1px;
+    }
+    
+    .gola{
+        height: 3vh;
+        width: 3vh;
+    }
+    
+    #nav-part2{
+        gap: 7vh;
+    }
+    
+    #nav-part2 h4{
+        font-size: 2vh;
+        font-weight: 500;
+        display: none;
+    }
+    
+    #nav-part2 h4 span{
+        margin-left: 1vw;
+        color: #A9AAAA;
+    }
+
+    #nav-part2 h4:nth-child(1){
+        display: initial;
+    }
+
+    #nav-part2 i{
+        display: initial;
+        font-size: 3vh;
+    }
+    
+    #nav2{
+        height: 7vh;
+        justify-content: center;
+        gap: 2vh;
+        padding: 0 2vh;
+    }
+    
+    #nav2 h3{
+        font-size: 2.5vw;
+        font-weight: 600;
+    }
+
+    #content{
+        height: calc(100% - 17vh);
+        width: 100%;
+    }
+    
+    #text-content{
+        height: 45%;
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-top: 5vw;
+    }
+    
+    .elem{
+        flex-shrink: 0;
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .elem h5{
+        display: none;
+    }
+    
+    .elem h1{
+        position: absolute;
+        left: 5%;
+        font-size: 20vw;
+        font-weight: 100;
+    }
+    
+    #text-content::-webkit-scrollbar{
+        background-color: transparent;
+        height: 2.5vw;
+    }
+    
+    #text-content::-webkit-scrollbar-thumb{
+        background-color: orangered;
+    }
+
+    
+
+
+}
